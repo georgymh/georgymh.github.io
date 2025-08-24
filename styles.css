@@ -1,0 +1,349 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f8f9fa;
+    color: #434343;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle background pattern */
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%), 
+                linear-gradient(-45deg, rgba(0,0,0,0.02) 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.02) 75%), 
+                linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.02) 75%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+}
+
+/* Main Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 100px 1rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    animation: fadeInUp 0.8s ease-out;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 540px;
+}
+
+.profile-image-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+.name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #49515a;
+    margin: 30px 0 5px 0;
+    letter-spacing: -0.5px;
+}
+
+.tagline {
+    font-size: 1.3rem;
+    color: #778492;
+    font-weight: 400;
+    margin: 18px 0 15px 0;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #778492;
+    font-weight: 400;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.subtitle a {
+    color: #3aaa64;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.subtitle a:hover {
+    color: #2d844e;
+    text-decoration: underline;
+}
+
+/* Social Links Section */
+.social-links-section {
+    width: 100%;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.social-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #b0b7bf;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+.social-link:hover {
+    background: #778492;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.social-icon i {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+
+.social-link:hover .social-icon i {
+    transform: scale(1.15);
+}
+
+.social-info {
+    display: none;
+}
+
+
+
+/* Platform-specific colors on hover */
+.instagram:hover {
+    background: #E4405F;
+}
+
+.linkedin:hover {
+    background: #0077B5;
+}
+
+.threads:hover {
+    background: #000000;
+}
+
+.youtube:hover {
+    background: #FF0000;
+}
+
+.tiktok:hover {
+    background: #000000;
+}
+
+.twitter:hover {
+    background: #000000;
+}
+
+/* Footer */
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.footer p {
+    color: #778492;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 60px 1rem 2rem;
+    }
+    
+    .name {
+        font-size: 1.8rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .subtitle {
+        font-size: 1.0rem;
+    }
+    
+    .profile-image {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .social-grid {
+        gap: 12px;
+    }
+    
+    .social-link {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .social-icon i {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 40px 0.75rem 2rem;
+    }
+    
+    .name {
+        font-size: 1.6rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .social-link {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .social-icon i {
+        font-size: 1rem;
+    }
+    
+    .profile-section {
+        padding: 30px 20px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .social-link {
+        border: 2px solid rgba(255, 255, 255, 0.8);
+    }
+    
+    .social-link:hover {
+        border-color: white;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .floating-shape {
+        animation: none;
+    }
+    
+    .profile-image {
+        animation: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .bg-animation {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .social-link {
+        background: white;
+        border: 1px solid black;
+        color: black;
+    }
+}
