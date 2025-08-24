@@ -1,49 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Georgy Marrero's Personal Website </title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Georgy Marrero - Personal Brand & Social Media Links"
+        />
+        <meta name="author" content="Georgy Marrero" />
 
-    <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- Open Graph Meta Tags for Social Sharing -->
+        <meta property="og:title" content="Georgy Marrero" />
+        <meta
+            property="og:description"
+            content="Connect with Georgy Marrero across social media platforms"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="./assets/profile.jpg" />
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-    
-    <!-- Style -->
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Georgy Marrero" />
+        <meta
+            name="twitter:description"
+            content="Connect with Georgy Marrero across social media platforms"
+        />
+        <meta name="twitter:image" content="./assets/profile.jpg" />
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body style="font-size:14px">
-    <div class="container">
-      <div class="row"> 
-        <div class="pad-top-lg col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
-          <div class="header text-center">
-            <div class="profile-content">
-              <h1 class="name"> Georgy Marrero </h1>
-              <h3 class="desc"> AI/ML Engineer </h3>
-              <h4 class="text-muted pad-top-md"> find me in github or linkedin </h4>
-              <ul class="social list-inline pad-top-sm">
-                <li><a href="https://github.com/georgymh"><i class="fa fa-github-alt"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/georgymarrero"><i class="fa fa-linkedin"></i></a></li>
-                <!-- <li><a href="https://twitter.com/georgymh"><i class="fa fa-twitter"></i></a></li> -->
-              </ul>
-            </div>
-          </div>
+        <title>Georgy Marrero</title>
+
+        <!-- Font Awesome for Social Media Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header class="profile-section">
+                <div class="profile-image-container">
+                    <img
+                        src="assets/profile.jpg"
+                        alt="Georgy Marrero"
+                        class="profile-image"
+                    />
+                </div>
+                <h1 class="name">Georgy Marrero</h1>
+                <h3 class="tagline">
+                    Founder at
+                    <a href="https://equis.capital">Equis Capital</a> &
+                    <a href="https://noomshot.com">Noomshot</a>
+                </h3>
+                <h4 class="subtitle">
+                    Ex-Meta GenAI → Founder, Investor, Coach, & Speaker
+                </h4>
+            </header>
+
+            <main class="social-links-section">
+                <div class="social-grid">
+                    <a
+                        href="https://instagram.com/georgymh"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link instagram"
+                        data-platform="Instagram"
+                    >
+                        <div class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+
+                    <a
+                        href="https://linkedin.com/in/georgymarrero"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link linkedin"
+                        data-platform="LinkedIn"
+                    >
+                        <div class="social-icon">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                    </a>
+
+                    <a
+                        href="https://youtube.com/@georgymarrero"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link youtube"
+                        data-platform="YouTube"
+                    >
+                        <div class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </a>
+
+                    <a
+                        href="https://www.threads.com/@georgymh"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link threads"
+                        data-platform="Threads"
+                    >
+                        <div class="social-icon">
+                            <i class="fab fa-threads"></i>
+                        </div>
+                    </a>
+
+                    <a
+                        href="https://tiktok.com/@georgymh"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link tiktok"
+                        data-platform="TikTok"
+                    >
+                        <div class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                    </a>
+
+                    <a
+                        href="https://x.com/georgymh"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link twitter"
+                        data-platform="X"
+                    >
+                        <div class="social-icon">
+                            <i class="fab fa-x-twitter"></i>
+                        </div>
+                    </a>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <p>&copy; 2025 Georgy Marrero. All rights reserved.</p>
+            </footer>
         </div>
-      </div>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
+
+        <!-- Background Pattern -->
+        <div class="bg-animation"></div>
+
+        <script src="script.js"></script>
+    </body>
 </html>
