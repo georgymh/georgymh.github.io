@@ -10,33 +10,101 @@ html {
     scroll-behavior: smooth;
 }
 
+/* CSS Variables for Light/Dark Mode */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #434343;
+    --card-bg: #ffffff;
+    --card-border: rgba(0, 0, 0, 0.05);
+    --card-shadow: rgba(0, 0, 0, 0.08);
+    --heading-color: #49515a;
+    --subtext-color: #778492;
+    --link-color: #3aaa64;
+    --link-hover: #2d844e;
+    --social-bg: #b0b7bf;
+    --social-hover: #778492;
+    --pattern-color: rgba(0, 0, 0, 0.02);
+    --pattern-accent: rgba(0, 0, 0, 0.04);
+    --toggle-bg: rgba(255, 255, 255, 0.9);
+    --toggle-border: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --card-bg: #2d2d2d;
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --heading-color: #ffffff;
+    --subtext-color: #b0b7bf;
+    --link-color: #3aaa64;
+    --link-hover: #2d844e;
+    --social-bg: #404040;
+    --social-hover: #565656;
+    --pattern-color: rgba(255, 255, 255, 0.007);
+    --pattern-accent: rgba(255, 255, 255, 0.06);
+    --toggle-bg: rgba(255, 255, 255, 0.1);
+    --toggle-border: rgba(255, 255, 255, 0.2);
+}
+
 body {
     font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: #f8f9fa;
-    color: #434343;
+    background: var(--bg-color);
+    color: var(--text-color);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Subtle background pattern */
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--card-shadow);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px var(--card-shadow);
+}
+
+/* Large subtle checker pattern background with parallax */
 .bg-animation {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: -20px;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
     pointer-events: none;
     z-index: -1;
-    background: linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%), 
-                linear-gradient(-45deg, rgba(0,0,0,0.02) 25%, transparent 25%), 
-                linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.02) 75%), 
-                linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.02) 75%);
-    background-size: 60px 60px;
-    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+    background: 
+        linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%), 
+        linear-gradient(-45deg, var(--pattern-color) 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, var(--pattern-color) 75%), 
+        linear-gradient(-45deg, transparent 75%, var(--pattern-color) 75%);
+    background-size: 120px 120px;
+    background-position: 0 0, 0 60px, 60px -60px, -60px 0px;
+    transition: transform 0.1s ease-out, all 0.3s ease;
+    will-change: transform;
 }
 
 /* Main Container */
@@ -58,13 +126,14 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     padding: 40px 30px;
-    background: #ffffff;
+    background: var(--card-bg);
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px var(--card-shadow);
     animation: fadeInUp 0.8s ease-out;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--card-border);
     width: 100%;
     max-width: 540px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-image-container {
@@ -77,8 +146,8 @@ body {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ffffff;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--card-bg);
+    box-shadow: 0 8px 25px var(--card-shadow);
     transition: all 0.3s ease;
 }
 
@@ -92,34 +161,50 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.4rem;
     font-weight: 700;
-    color: #49515a;
+    color: var(--heading-color);
     margin: 30px 0 5px 0;
     letter-spacing: -0.5px;
+    transition: color 0.3s ease;
 }
 
 .tagline {
     font-size: 1.3rem;
-    color: #778492;
+    color: var(--subtext-color);
     font-weight: 400;
     margin: 18px 0 15px 0;
+    transition: color 0.3s ease;
+}
+
+.tagline a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 700;
+}
+
+.tagline a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
 }
 
 .subtitle {
     font-size: 1.2rem;
-    color: #778492;
+    color: var(--subtext-color);
     font-weight: 400;
     margin: 20px 0;
     line-height: 1.5;
-}
-
-.subtitle a {
-    color: #3aaa64;
-    text-decoration: none;
     transition: color 0.3s ease;
 }
 
+.subtitle a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
 .subtitle a:hover {
-    color: #2d844e;
+    color: var(--link-hover);
     text-decoration: underline;
 }
 
@@ -144,7 +229,7 @@ body {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: #b0b7bf;
+    background: var(--social-bg);
     border-radius: 50%;
     text-decoration: none;
     color: white;
@@ -154,9 +239,9 @@ body {
 
 
 .social-link:hover {
-    background: #778492;
+    background: var(--social-hover);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px var(--card-shadow);
 }
 
 .social-icon {
@@ -216,9 +301,10 @@ body {
 }
 
 .footer p {
-    color: #778492;
+    color: var(--subtext-color);
     font-size: 0.85rem;
     font-weight: 400;
+    transition: color 0.3s ease;
 }
 
 /* Animations */
