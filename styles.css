@@ -208,6 +208,12 @@ body {
     text-decoration: underline;
 }
 
+.free-trainings {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: calc(100% - 2px);
+}
+
 /* Social Links Section */
 .social-links-section {
     width: 100%;
@@ -291,6 +297,10 @@ body {
 
 .twitter:hover {
     background: #000000;
+}
+
+.github:hover {
+    background: #333333;
 }
 
 /* Footer */
